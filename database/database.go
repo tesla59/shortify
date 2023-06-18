@@ -12,7 +12,7 @@ var DBConn *gorm.DB
 
 func InitDB() {
 	var err error
-	DBConn, err = gorm.Open(sqlite.Open("database,db"))
+	DBConn, err = gorm.Open(sqlite.Open("database.db"))
 	if err != nil {
 		panic("Cannot connect to the database")
 	}
