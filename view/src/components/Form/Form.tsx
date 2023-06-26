@@ -18,7 +18,9 @@ export default function URLForm() {
         <>
             <div className='virtual-body'>
                 <div className="url-form">
+                <div className='heading'>Shortify</div>
                     <form onSubmit={handleSubmit}>
+                        <div className="form">
                         <div className='layer'>
                             <label htmlFor="long-url">Shorten a long URL:</label>
                             <input
@@ -38,6 +40,7 @@ export default function URLForm() {
                                 onChange={(event) => setAlias(event.target.value)} />
                         </div>
                         <button type="submit" id='submit'>Shorten URL</button>
+                        </div>
                     </form>
                 </div>
             </div>
