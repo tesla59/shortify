@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/tesla59/shortify/models"
-	"gorm.io/driver/sqlite"
+	"github.com/glebarez/sqlite"
 	"gorm.io/gorm"
 )
 
