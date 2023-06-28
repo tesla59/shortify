@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/google/uuid"
 	"github.com/tesla59/shortify/database"
 	"github.com/tesla59/shortify/models"
@@ -9,6 +10,7 @@ import (
 )
 
 func InitRouter(app *fiber.App) {
+	app.Use(cors.New())
 	short := app.Group("/api/v1")
 
 	short.Get("/shorts", GetAllURLs)
