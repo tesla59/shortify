@@ -52,13 +52,7 @@ func CreateURL(c *fiber.Ctx) error {
 	URL.ID = uuid.NewString()
 	URL.Random = URL.ShortURL == ""
 	if URL.Random {
-		var err error
-		URL.ShortURL, err = utils.GenerateWord()
-		if err != nil {
-			return c.Status(fiber.StatusServiceUnavailable).JSON(fiber.Map{
-				"message": "error generating randomised link: " + err.Error(),
-			})
-		}
+		URL.ShortURL = utils.GenerateWord()
 	}
 	if err := utils.ValidateURL(URL); err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
