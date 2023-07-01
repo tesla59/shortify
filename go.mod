@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/gofiber/fiber/v2 v2.46.0
 	github.com/google/uuid v1.3.0
+	github.com/joho/godotenv v1.5.1
 	github.com/tesla59/golexicon v0.0.0-20230628120009-eaf423704707
 	gorm.io/gorm v1.25.2-0.20230530020048-26663ab9bf55
 )

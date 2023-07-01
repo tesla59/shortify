@@ -10,5 +10,7 @@ RUN go build -o shortify-server
 FROM alpine:3.18
 WORKDIR /app
 COPY --from=builder /app/shortify-server .
-EXPOSE 5566
+COPY --from=builder /app/.env .env
+ENV $(cat .env | xargs)
+EXPOSE $PORT
 CMD ["./shortify-server"]
