@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Form.css';
+import { backendURL } from '../../constants';
 
 export default function URLForm() {
     const [longUrl, setLongUrl] = useState('');
@@ -8,7 +9,7 @@ export default function URLForm() {
     const handleSubmit = async (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:5566/api/v1/shorts', {
+            const response = await fetch(backendURL + '/api/v1/shorts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
