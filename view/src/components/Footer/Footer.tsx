@@ -4,7 +4,7 @@ import './footer.css'
 function Footer() {
   return (
     <div className="footer">
-        Link to source Coce
+        Link to source Code
     </div>
   )
 }
